@@ -1189,6 +1189,13 @@
     #careers .stack-item p br { display: none; }
     #where-were-going .stack-item:last-child { margin-bottom: 48px; }
 
+    #contact .company-table th { width: 42%; }
+    #contact .company-table th,
+    #contact .company-table td {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
     #partnerships .intro-panel {
       min-height: 600px;
       background-image: url('../images/partnerships-figma.png');
