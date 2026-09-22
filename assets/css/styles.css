@@ -1071,6 +1071,19 @@
     }
     body.menu-open { overflow: hidden; }
 
+    #what-we-do .intro-panel .wrap,
+    #how-we-work .intro-panel .wrap,
+    #partnerships .intro-panel .wrap,
+    #careers .intro-panel .wrap,
+    #contact-band .wrap {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    #contact > .wrap > h2 {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+
     .hero-links {
       display: grid;
       grid-template-columns: 159px 118px;
@@ -1166,6 +1179,12 @@
 
     #where-were-going > .detail-wrap {
       padding-top: 88px;
+    }
+    #where-were-going h2,
+    #where-were-going .chapter-label,
+    #where-were-going > .detail-wrap > .lead {
+      margin-left: 8px;
+      margin-right: 8px;
     }
     #where-were-going .stack-item:last-child { margin-bottom: 48px; }
 
