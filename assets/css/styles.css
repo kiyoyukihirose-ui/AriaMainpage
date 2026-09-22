@@ -954,9 +954,11 @@
 
   /* ---------- SP refinement: Figma parity ---------- */
   .sp-heading-break { display: none; }
+  .sp-contact-break { display: none; }
 
   @media (max-width: 768px) {
     .sp-heading-break { display: block; }
+    .sp-contact-break { display: block; }
 
     .site-header .lang-switch { right: 68px; }
     .site-header .menu-toggle {
