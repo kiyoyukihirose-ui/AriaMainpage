@@ -1079,6 +1079,7 @@
       padding-left: 24px;
       padding-right: 24px;
     }
+    #what-we-do .intro-panel .lead br { display: none; }
 
     .hero-links {
       display: grid;
