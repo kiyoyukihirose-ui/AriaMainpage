@@ -711,7 +711,7 @@
       gap: 0;
       grid-auto-rows: 1fr;
       background-image: url('../images/business-panel.jpg');
-      background-position: center 70%;
+      background-position: center bottom;
       background-size: auto 130%;
       background-repeat: no-repeat;
     }
