@@ -575,8 +575,8 @@
     filter: drop-shadow(0 0 4px rgba(18, 96, 232, 0.28));
   }
   @keyframes wwd-orbit-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: rotate(-48deg); }
+    to { transform: rotate(312deg); }
   }
   @media (prefers-reduced-motion: reduce) {
     #what-we-do .wwd-orbit { animation: none; }
