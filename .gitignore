@@ -1,0 +1,6 @@
+backups/
+.edge-capture-*/
+figma-*.png
+*.log
+.DS_Store
+Thumbs.db
