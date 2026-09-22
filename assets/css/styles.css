@@ -1071,6 +1071,20 @@
     }
     body.menu-open { overflow: hidden; }
 
+    .hero-links {
+      display: grid;
+      grid-template-columns: 159px 118px;
+      justify-content: center;
+      gap: 12px 14px;
+    }
+    .hero-links a:first-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 177px;
+    }
+    .hero-links a:nth-child(2) { width: 159px; }
+    .hero-links a:nth-child(3) { width: 118px; }
+
     /* WHO WE ARE: Figma mobile 393 / node 188:55 */
     #who-we-are .intro-panel {
       height: 474.53125px;
