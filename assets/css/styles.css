@@ -1167,12 +1167,6 @@
     #where-were-going > .detail-wrap {
       padding-top: 88px;
     }
-    #where-were-going h2,
-    #where-were-going .chapter-label,
-    #where-were-going > .detail-wrap > .lead {
-      margin-left: 8px;
-      margin-right: 8px;
-    }
     #where-were-going .stack-item:last-child { margin-bottom: 48px; }
 
     #partnerships .intro-panel {
