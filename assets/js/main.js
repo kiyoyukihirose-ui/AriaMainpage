@@ -150,10 +150,28 @@ document.documentElement.classList.add('js');
     });
   }
 
+  function initOrbitMotion() {
+    var section = document.querySelector('#what-we-do');
+    if (!section) return;
+    if (!('IntersectionObserver' in window)) {
+      section.classList.add('is-orbit-active');
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        section.classList.add('is-orbit-active');
+        observer.disconnect();
+      });
+    }, { threshold: 0.18 });
+    observer.observe(section);
+  }
+
   function initPageMotion() {
     initCountUp();
     initScrollReveals();
     initMobileMenu();
+    initOrbitMotion();
   }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initPageMotion); } else { initPageMotion(); }
   window.addEventListener('load', drawWaveConnector);

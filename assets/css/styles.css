@@ -566,13 +566,16 @@
     transform-origin: center;
     pointer-events: none;
     will-change: transform;
-    animation: wwd-orbit-spin 32s linear infinite;
+    animation: wwd-orbit-spin 32s linear .6s infinite;
+    animation-play-state: paused;
   }
+  #what-we-do.is-orbit-active .wwd-orbit { animation-play-state: running; }
   #what-we-do .wwd-orbit-drop {
     shape-rendering: geometricPrecision;
     filter: drop-shadow(0 0 4px rgba(18, 96, 232, 0.28));
   }
   @keyframes wwd-orbit-spin {
+    from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
   @media (prefers-reduced-motion: reduce) {
