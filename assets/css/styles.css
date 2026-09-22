@@ -184,7 +184,7 @@
     font-size: 13px;
     text-decoration: none;
     letter-spacing: 0.05em;
-    transition: transform 360ms cubic-bezier(.22,1,.36,1), border-color 280ms ease, box-shadow 360ms cubic-bezier(.22,1,.36,1);
+    transition: border-color 280ms ease;
   }
   .hero-links a::before {
     content: "";
@@ -201,22 +201,18 @@
   .hero-links a:first-child { background: var(--royal-blue); color: var(--white); font-weight: 700; }
   .hero-links a:not(:first-child) { border: 1px solid var(--white); color: var(--white); }
   .hero-links a:focus-visible {
-    transform: translateY(-2px);
     border-color: #dceeff;
-    box-shadow: 0 12px 28px rgba(5,39,100,.22);
   }
   .hero-links a:focus-visible::before { transform: scaleX(1); }
   .hero-links a:focus-visible span { transform: translateX(2px); }
   @media (hover: hover) and (pointer: fine) {
     .hero-links a:hover {
-      transform: translateY(-2px);
       border-color: #dceeff;
-      box-shadow: 0 12px 28px rgba(5,39,100,.22);
     }
     .hero-links a:hover::before { transform: scaleX(1); }
     .hero-links a:hover span { transform: translateX(2px); }
   }
-  .hero-links a:active { transform: translateY(0) scale(.985); }
+  .hero-links a:active { transform: scale(.985); }
   .hero-scroll {
     position: absolute;
     left: 50%;
