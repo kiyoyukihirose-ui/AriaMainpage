@@ -707,7 +707,13 @@
     #what-we-do .wwd-stats-note { margin-top: 12px; }
     #mission-vision .mv-half { min-height: 0; padding: 64px 24px; }
     #mission-vision .mv-half .eyebrow { margin-bottom: 28px; }
-    #mission-vision .mv-split { gap: 0; grid-auto-rows: 1fr; }
+    #mission-vision .mv-split {
+      gap: 0;
+      grid-auto-rows: 1fr;
+      background: url('../images/business-panel.jpg') center / cover no-repeat;
+    }
+    #mission-vision .mv-half.navy,
+    #mission-vision .mv-half.cobalt { background-image: none; }
   }
 
   /* ---------- Figma sync: HOW WE WORK through footer ---------- */
