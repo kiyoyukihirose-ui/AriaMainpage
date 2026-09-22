@@ -502,7 +502,7 @@
 
   #what-we-do {
     position: relative;
-    min-height: 1619px;
+    min-height: 1719px;
     overflow: hidden;
     background-image: url('../images/tokyo-skyline.png');
     background-attachment: fixed;
@@ -650,6 +650,9 @@
   #what-we-do .wwd-stats-note { position: absolute; left: 17px; top: 121px; width: 272px; max-width: none; margin: 0; font-size: 11.5px; line-height: 21.85px; white-space: nowrap; }
 
   #mission-vision .mv-half { min-height: 520px; align-items: center; text-align: center; padding-top: 96px; }
+  @media (min-width: 769px) {
+    #mission-vision .mv-half { background-position: center 70%; }
+  }
   #mission-vision .mv-half.navy::after { background: rgba(7,26,58,0.78); }
   #mission-vision .mv-half .eyebrow { display: block; width: auto; max-width: none; margin: 0 0 44px; font-size: 24px; line-height: 38px; }
   #mission-vision .mv-half .eyebrow::after { display: none; }
