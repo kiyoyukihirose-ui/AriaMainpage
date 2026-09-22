@@ -566,7 +566,7 @@
     transform-origin: center;
     pointer-events: none;
     will-change: transform;
-    animation: wwd-orbit-spin 32s linear .6s infinite;
+    animation: wwd-orbit-spin 32s linear .6s infinite both;
     animation-play-state: paused;
   }
   #what-we-do.is-orbit-active .wwd-orbit { animation-play-state: running; }
