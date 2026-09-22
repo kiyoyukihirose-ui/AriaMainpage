@@ -678,7 +678,7 @@
     #what-we-do .intro-panel { min-height: 620px; align-items: center; }
     #what-we-do .intro-panel .wrap { padding: 72px 20px; }
     #what-we-do .detail-wrap.wwd-diagram-panel { position: relative; inset: auto; padding: 64px 20px 96px; }
-    #what-we-do .radial { position: relative; top: auto; left: auto; width: 100%; height: auto; transform: none; display: flex; flex-direction: column; gap: 28px; }
+    #what-we-do .radial { position: relative; top: auto; left: auto; width: 100%; height: auto; transform: none; display: flex; flex-direction: column; gap: 52px; }
     #what-we-do .wwd-orbit { display: none; }
     #what-we-do .radial .center { display: none; }
     #what-we-do .radial .node,
