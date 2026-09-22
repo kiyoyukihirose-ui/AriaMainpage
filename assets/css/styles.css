@@ -710,7 +710,10 @@
     #mission-vision .mv-split {
       gap: 0;
       grid-auto-rows: 1fr;
-      background: url('../images/business-panel.jpg') center / cover no-repeat;
+      background-image: url('../images/business-panel.jpg');
+      background-position: center 55%;
+      background-size: auto 130%;
+      background-repeat: no-repeat;
     }
     #mission-vision .mv-half.navy,
     #mission-vision .mv-half.cobalt { background-image: none; }
