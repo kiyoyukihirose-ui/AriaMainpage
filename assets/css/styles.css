@@ -1071,6 +1071,61 @@
     }
     body.menu-open { overflow: hidden; }
 
+    /* WHO WE ARE: Figma mobile 393 / node 188:55 */
+    #who-we-are .intro-panel {
+      height: 474.53125px;
+      min-height: 474.53125px;
+      align-items: flex-start;
+      background-size: cover;
+      background-position: center;
+    }
+    #who-we-are .intro-panel::after {
+      background:
+        linear-gradient(90deg, #fff 0%, rgba(255,255,255,.65) 99.99%),
+        linear-gradient(90deg, rgba(0,90,255,.25), rgba(0,90,255,.25));
+    }
+    #who-we-are .intro-panel .wrap {
+      height: 100%;
+      padding: 0;
+    }
+    #who-we-are h2 {
+      position: absolute;
+      top: 72px;
+      left: 24px;
+      margin: 0;
+      padding: 0;
+      color: #071a3a;
+      font-size: 25px;
+      line-height: 47.5px;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    #who-we-are h2 .en {
+      margin: 0 0 11.14px;
+      color: var(--royal-blue);
+      font-size: 13px;
+      line-height: 24.7px;
+      letter-spacing: .15em;
+    }
+    #who-we-are h2::after { display: none; }
+    #who-we-are .lead {
+      position: absolute;
+      left: 24px;
+      margin: 0 !important;
+      color: #1f252f;
+      font-size: 16px;
+      line-height: 30.4px;
+    }
+    #who-we-are .lead:first-of-type {
+      top: 188.25px;
+      width: min(345px, calc(100% - 48px));
+    }
+    #who-we-are .lead:last-of-type {
+      top: 296px;
+      width: min(351px, calc(100% - 42px));
+    }
+    #who-we-are .who-desktop-break { display: none; }
+
     #how-we-work .hww-band .closing.statement-center {
       font-size: 24px;
       line-height: 1.7;
