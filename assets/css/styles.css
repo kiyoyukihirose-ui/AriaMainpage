@@ -191,12 +191,12 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(110deg, rgba(20,82,205,.94), rgba(52,171,232,.78));
+    background: linear-gradient(110deg, rgba(30,95,214,.96), rgba(30,95,214,.66));
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 380ms cubic-bezier(.22,1,.36,1);
   }
-  .hero-links a:first-child::before { background: linear-gradient(110deg, rgba(7,36,104,.42), rgba(61,177,235,.34)); }
+  .hero-links a:first-child::before { background: linear-gradient(110deg, rgba(30,95,214,.52), rgba(30,95,214,.20)); }
   .hero-links a span { position: relative; z-index: 1; display: inline-block; transition: transform 360ms cubic-bezier(.22,1,.36,1); }
   .hero-links a:first-child { background: var(--royal-blue); color: var(--white); font-weight: 700; }
   .hero-links a:not(:first-child) { border: 1px solid var(--white); color: var(--white); }
