@@ -815,7 +815,15 @@
     #where-were-going .chapter-label { margin-bottom: 16px !important; }
     #where-were-going .lead { line-height: 1.9; }
     #where-were-going .stack-list { margin-top: 40px; }
-    #where-were-going .stack-item { min-height: 181.828px; padding: 28px 0; }
+    #where-were-going .stack-item { grid-template-columns: 72px 131px minmax(0, 1fr); gap: 0; min-height: 181.828px; padding: 28px 0; }
+    #where-were-going .wwg-icon {
+      display: block;
+      justify-self: center;
+      align-self: center;
+    }
+    #where-were-going .stack-item:nth-child(1) .wwg-icon { width: 86.775px; height: 113.492px; }
+    #where-were-going .stack-item:nth-child(2) .wwg-icon { width: 124.958px; height: 98.069px; }
+    #where-were-going .stack-item:nth-child(3) .wwg-icon { width: 84.481px; height: 107.355px; }
     #where-were-going .stack-item p { line-height: 1.9; }
 
     #partnerships { height: 1293.141px; overflow: hidden; border-bottom: 0; }
@@ -1230,7 +1238,17 @@
     #where-were-going > .detail-wrap {
       padding-top: 88px;
     }
-    #where-were-going .stack-item,
+    #where-were-going .stack-item {
+      grid-template-columns: 40px 56px minmax(0, 1fr);
+      gap: 8px;
+    }
+    #where-were-going .wwg-icon {
+      justify-self: center;
+      align-self: start;
+    }
+    #where-were-going .stack-item:nth-child(1) .wwg-icon { width: 55px; height: 72px; }
+    #where-were-going .stack-item:nth-child(2) .wwg-icon { width: 56px; height: 44px; }
+    #where-were-going .stack-item:nth-child(3) .wwg-icon { width: 56px; height: 71px; }
     #careers .stack-item {
       grid-template-columns: 56px minmax(0, 1fr);
       gap: 16px;
