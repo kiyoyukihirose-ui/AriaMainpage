@@ -1245,9 +1245,9 @@
     }
     #where-were-going .wwg-icon {
       position: absolute;
-      top: 52px;
+      top: 50%;
       left: 0;
-      transform: none;
+      transform: translateY(-50%);
     }
     #where-were-going .stack-item:nth-child(1) .wwg-icon { width: 48px; height: 63px; left: 4px; }
     #where-were-going .stack-item:nth-child(2) .wwg-icon { width: 52px; height: 41px; left: 2px; }
