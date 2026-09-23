@@ -257,7 +257,7 @@
   .cta-btn.primary:hover { background: var(--dark); border-color: var(--dark); color: var(--white); }
   @media (max-width: 480px) { .cta-call { font-size: 17px; } }
 
-  .careers-band { background: var(--off-white); border-top: 1px solid var(--line); padding: 64px 0; }
+  .careers-band { background: var(--white); border-top: 1px solid var(--line); padding: 64px 0; }
 
   /* MISSION / VISION: each half is its own fixed photo panel */
   .mv-split { display: grid; grid-template-columns: 1fr 1fr; }
