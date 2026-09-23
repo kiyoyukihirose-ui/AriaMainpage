@@ -1250,7 +1250,7 @@
       transform: translateY(-50%);
     }
     #where-were-going .stack-item:nth-child(1) .wwg-icon { width: 48px; height: 63px; left: 4px; }
-    #where-were-going .stack-item:nth-child(2) .wwg-icon { width: 52px; height: 41px; left: 2px; }
+    #where-were-going .stack-item:nth-child(2) .wwg-icon { width: 64px; height: 50px; left: -4px; }
     #where-were-going .stack-item:nth-child(3) .wwg-icon { width: 48px; height: 61px; left: 4px; }
     #careers .stack-item {
       grid-template-columns: 56px minmax(0, 1fr);
