@@ -396,7 +396,7 @@
   .footer-grid { border-bottom-color: #4a3f24; }
   table.company-table th, table.company-table td { border-bottom-color: #eadfc4; }
   h2 { position: relative; padding-bottom: 14px; }
-  h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 36px; height: 1px; background: var(--gold); }
+  h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 36px; height: 4px; background: var(--gold); }
   .intro-panel.tone-dark h2::after, .mv-half h3::after { background: var(--gold-light); }
   @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 768px) {
