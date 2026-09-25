@@ -397,6 +397,9 @@
   table.company-table th, table.company-table td { border-bottom-color: #eadfc4; }
   h2 { position: relative; padding-bottom: 14px; }
   h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 36px; height: 4px; background: var(--gold); }
+  #how-we-work h2::after,
+  #where-were-going h2::after,
+  #contact h2::after { background: var(--royal-blue); }
   .intro-panel.tone-dark h2::after, .mv-half h3::after { background: var(--gold-light); }
   @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 768px) {
