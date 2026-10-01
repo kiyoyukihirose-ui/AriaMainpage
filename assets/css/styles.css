@@ -1373,7 +1373,7 @@
 .lang-en #contact .company-table th { width: 240px; }
 .lang-en #how-we-work .hww-band .closing.statement-center {
   max-width: 900px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-serif);
   font-size: 26px;
   font-weight: 400;
   line-height: 1.7;
