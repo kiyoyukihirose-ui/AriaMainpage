@@ -169,7 +169,68 @@ document.documentElement.classList.add('js');
     observer.observe(section);
   }
 
+  function initLanguagePositionSwitch() {
+    var storageKey = 'aria-language-position';
+    var links = document.querySelectorAll('.lang-switch a');
+
+    Array.prototype.forEach.call(links, function (link) {
+      if (link.hasAttribute('aria-current')) return;
+      link.addEventListener('click', function () {
+        var sections = document.querySelectorAll('main > section[id]');
+        var viewportCenter = window.scrollY + (window.innerHeight / 2);
+        var current = null;
+
+        Array.prototype.some.call(sections, function (section) {
+          var top = section.offsetTop;
+          var bottom = top + section.offsetHeight;
+          if (viewportCenter >= top && viewportCenter < bottom) {
+            current = section;
+            return true;
+          }
+          return false;
+        });
+
+        if (!current) return;
+        var progress = (viewportCenter - current.offsetTop) / Math.max(current.offsetHeight, 1);
+        progress = Math.max(0, Math.min(1, progress));
+        try {
+          sessionStorage.setItem(storageKey, JSON.stringify({
+            id: current.id,
+            progress: progress,
+            savedAt: Date.now()
+          }));
+        } catch (error) {}
+
+        var baseHref = link.getAttribute('href').split('#')[0];
+        link.setAttribute('href', baseHref + '#' + current.id);
+      });
+    });
+
+    var saved;
+    try { saved = JSON.parse(sessionStorage.getItem(storageKey)); } catch (error) { saved = null; }
+    if (!saved || !saved.id || Date.now() - saved.savedAt > 60000 || window.location.hash !== '#' + saved.id) return;
+
+    function restorePosition() {
+      var section = document.getElementById(saved.id);
+      if (!section) return;
+      var targetPoint = section.offsetTop + (section.offsetHeight * saved.progress);
+      var targetY = Math.max(0, targetPoint - (window.innerHeight / 2));
+      var root = document.documentElement;
+      var previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, targetY);
+      root.style.scrollBehavior = previousBehavior;
+    }
+
+    requestAnimationFrame(function () { requestAnimationFrame(restorePosition); });
+    window.addEventListener('load', function () {
+      restorePosition();
+      try { sessionStorage.removeItem(storageKey); } catch (error) {}
+    }, { once: true });
+  }
+
   function initPageMotion() {
+    initLanguagePositionSwitch();
     initCountUp();
     initScrollReveals();
     initMobileMenu();
