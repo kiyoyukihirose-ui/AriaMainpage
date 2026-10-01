@@ -126,7 +126,7 @@ document.documentElement.classList.add('js');
 
     function closeMenu() {
       button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-label', 'メニューを開く');
+      button.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Open menu' : 'メニューを開く');
       nav.classList.remove('is-open');
       document.body.classList.remove('menu-open');
     }
@@ -134,7 +134,9 @@ document.documentElement.classList.add('js');
     button.addEventListener('click', function () {
       var willOpen = button.getAttribute('aria-expanded') !== 'true';
       button.setAttribute('aria-expanded', String(willOpen));
-      button.setAttribute('aria-label', willOpen ? 'メニューを閉じる' : 'メニューを開く');
+      button.setAttribute('aria-label', document.documentElement.lang === 'en'
+        ? (willOpen ? 'Close menu' : 'Open menu')
+        : (willOpen ? 'メニューを閉じる' : 'メニューを開く'));
       nav.classList.toggle('is-open', willOpen);
       document.body.classList.toggle('menu-open', willOpen);
     });
