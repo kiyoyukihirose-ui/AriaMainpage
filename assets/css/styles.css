@@ -1175,7 +1175,7 @@
       min-height: 474.53125px;
       align-items: flex-start;
       background-size: cover;
-      background-position: center;
+      background-position: 75% center;
     }
     #who-we-are .intro-panel::after {
       background:
