@@ -896,9 +896,9 @@
       background-size: 1152px 264.453px;
       pointer-events: none;
     }
-    #partnerships .icon-diamond { top: 16px; left: 100px; width: 70px; height: 57px; background-position: -394px -16px; }
-    #partnerships .icon-global { top: 16px; left: 101px; width: 68.393px; height: 70px; background-position: -689px -16px; }
-    #partnerships .icon-handshake { top: 29px; left: 90px; width: 90px; height: 57px; background-position: -972px -29px; }
+    #partnerships .icon-diamond { top: 16px; left: 50%; width: 70px; height: 57px; background-position: -394px -16px; transform: translateX(-50%); }
+    #partnerships .icon-global { top: 16px; left: 50%; width: 68.393px; height: 70px; background-position: -689px -16px; transform: translateX(-50%); }
+    #partnerships .icon-handshake { top: 29px; left: 50%; width: 90px; height: 57px; background-position: -972px -29px; transform: translateX(-50%); }
     #partnerships .e-wave .item { padding-top: 93px; }
     #partnerships .e-wave .item:nth-of-type(2) { padding-top: 92px; }
     #partnerships .e-wave .item:nth-of-type(3) { padding-top: 94px; }
@@ -1371,6 +1371,10 @@
 .lang-en #partnerships .e-wave h3,
 .lang-en #careers .stack-item h3 { font-family: var(--font-serif); }
 .lang-en #contact .company-table th { width: 240px; }
+.lang-en .hero-tagline,
+.lang-en #mission-vision .mv-half h3,
+.lang-en #careers .careers-apply .cta-call,
+.lang-en #contact-band .contact-band-lead { font-family: var(--font-serif); }
 .lang-en #how-we-work .hww-band .closing.statement-center {
   max-width: 900px;
   font-family: var(--font-serif);
