@@ -35,6 +35,55 @@ document.documentElement.classList.add('js');
     }, 0.4);
   };
 
+  const revealGroups = [
+    '#who-we-are h2, #who-we-are .lead',
+    '#what-we-do .intro-panel h2, #what-we-do .intro-panel .lead',
+    '#what-we-do .radial .center',
+    '#what-we-do .node.commerce h3, #what-we-do .node.commerce p',
+    '#what-we-do .node.education h3, #what-we-do .node.education p',
+    '#what-we-do .node.legal h3, #what-we-do .node.legal p',
+    '#what-we-do .biz-note',
+    '#mission-vision .mv-half.navy .eyebrow, #mission-vision .mv-half.navy h3',
+    '#mission-vision .mv-half.cobalt .eyebrow, #mission-vision .mv-half.cobalt h3',
+    '#how-we-work .intro-panel h2, #how-we-work .intro-panel .lead',
+    '#how-we-work .grid3 .item',
+    '#how-we-work .hww-band .closing',
+    '#where-were-going h2, #where-were-going .chapter-label, #where-were-going .lead',
+    '#where-were-going .stack-item',
+    '#partnerships .intro-panel h2, #partnerships .intro-panel .mag-body p',
+    '#partnerships .detail-wrap > .section-label',
+    '#partnerships .e-wave .item',
+    '#partnerships .closing-center .cta-call, #partnerships .closing-center .cta-btn',
+    '#careers .intro-panel h2, #careers .intro-panel .lead',
+    '#careers .careers-band > .wrap > .section-label',
+    '#careers .stack-item',
+    '#careers .careers-photos, #careers .careers-apply',
+    '#contact-band .contact-band-en, #contact-band .contact-band-lead, #contact-band .contact-band-btn',
+    '#contact h2, #contact .company-table, #contact .legal-links'
+  ];
+
+  const initScrollReveals = () => {
+    const targets = revealGroups.flatMap(selector =>
+      [...document.querySelectorAll(selector)].map((element, index) => {
+        element.classList.add('scroll-reveal');
+        element.style.setProperty('--reveal-delay', `${index * 0.14}s`);
+        return element;
+      })
+    );
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      targets.forEach(element => element.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(element => observer.observe(element));
+  };
+
   const initMobileMenu = () => {
     const button = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.main-nav');
@@ -101,6 +150,7 @@ document.documentElement.classList.add('js');
   const init = () => {
     initLanguagePositionSwitch();
     initCountUp();
+    initScrollReveals();
     initMobileMenu();
     initOrbitMotion();
   };
