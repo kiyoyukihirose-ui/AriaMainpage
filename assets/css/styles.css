@@ -13,7 +13,7 @@
     --photo-a: #d7e4f7;
     --focus: #1e5fd6;
     --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
-    --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    --font-serif: "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Noto Serif JP", serif;
   }
 
   * { box-sizing: border-box; }
