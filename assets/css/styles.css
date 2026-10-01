@@ -281,7 +281,7 @@
   .mv-half.navy::after { background: rgba(28,58,99,0.86); }
   .mv-half.cobalt { background-image: url('../images/business-panel.jpg'); color: var(--white); }
   .mv-half.cobalt::after { background: rgba(30,95,214,0.78); }
-  .mv-half .eyebrow { font-family: var(--font-serif); font-size: 20px; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 16px; width: 100%; max-width: 300px; }
+  .mv-half .eyebrow { font-family: var(--font-sans); font-size: 20px; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 16px; width: 100%; max-width: 300px; }
   .mv-half .eyebrow::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: 0.5; }
   .mv-half.navy .eyebrow { color: var(--white); }
   .mv-half.cobalt .eyebrow { color: var(--white); }
