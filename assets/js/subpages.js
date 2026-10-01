@@ -66,7 +66,7 @@
     if (document.body.getAttribute('data-page') !== 'thanks') return;
     var isEnglish = new URLSearchParams(window.location.search).get('lang') === 'en';
     document.documentElement.lang = isEnglish ? 'en' : 'ja';
-    document.title = isEnglish ? 'Message Received | ARIA' : '送信完了 | ARIA';
+    document.title = isEnglish ? 'Message Received | Aria' : '送信完了 | Aria';
     Array.prototype.forEach.call(document.querySelectorAll('[data-lang-copy]'), function (node) {
       node.hidden = node.getAttribute('data-lang-copy') !== (isEnglish ? 'en' : 'ja');
     });
