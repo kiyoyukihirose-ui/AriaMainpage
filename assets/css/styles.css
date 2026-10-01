@@ -1373,11 +1373,11 @@
 .lang-en #contact .company-table th { width: 240px; }
 .lang-en #how-we-work .hww-band .closing.statement-center {
   max-width: 900px;
-  font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 1.65;
-  letter-spacing: 0.025em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.018em;
   color: #f3f7ff;
 }
 
@@ -1409,9 +1409,9 @@
 @media (max-width: 768px) {
   .lang-en #how-we-work .hww-band .closing.statement-center {
     max-width: 330px;
-    font-size: 20px;
-    line-height: 1.6;
-    letter-spacing: 0.015em;
+    font-size: 21px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
   }
   .lang-en .hero-tagline { top: 158px; font-size: 18px; line-height: 1.5; }
   .lang-en .hero-links { top: 294px; }
