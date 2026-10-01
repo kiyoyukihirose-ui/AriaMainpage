@@ -9,6 +9,7 @@
 .status-panel strong { display: block; color: var(--dark); font-family: var(--font-serif); font-size: 21px; }
 .status-panel p { margin: 8px 0 0; color: var(--text-sub); }
 .subpage-heading { margin: 0 0 28px; padding-bottom: 16px; border-bottom: 2px solid var(--royal-blue); color: var(--dark); font-size: 26px; }
+.subpage-heading::after { display: none; }
 .info-list { margin: 0 0 34px; border-top: 1px solid #dfd3b7; }
 .info-row { display: grid; grid-template-columns: 180px 1fr; gap: 28px; padding: 18px 0; border-bottom: 1px solid #dfd3b7; }
 .info-row dt { color: var(--text-sub); }
