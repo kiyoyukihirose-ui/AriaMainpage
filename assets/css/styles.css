@@ -127,7 +127,7 @@
   #who-we-are h2::after { height: 4px; background: var(--royal-blue); }
   #what-we-do .intro-panel { background-image: url('../images/business-panel.jpg'); }
   #what-we-do .intro-panel::after { background: linear-gradient(180deg, rgba(28,58,99,0.55) 0%, rgba(28,58,99,0.55) 70%, rgba(255,255,255,0.86) 100%); }
-  #how-we-work .intro-panel { background-image: url('../images/collaboration.jpg'); }
+  #how-we-work .intro-panel { background-image: url('../images/how-we-work-team.jpeg'); }
   #partnerships .intro-panel { background-image: url('../images/partnership.jpg'); }
   #careers .intro-panel { background-image: url('../images/careers.jpg'); }
 
@@ -768,7 +768,7 @@
       min-height: 933px;
       height: 933px;
       align-items: flex-start;
-      background-image: url('../images/how-we-work-figma.png');
+      background-image: url('../images/how-we-work-team.jpeg');
       background-size: cover;
       background-position: center;
     }
