@@ -118,7 +118,7 @@
   .intro-panel.tone-dark .lead { color: #d3e0f2; }
 
   /* per-section stock photos */
-  #who-we-are .intro-panel { background-image: url('../images/team-meeting.jpg'); min-height: 988px; height: 988px; }
+  #who-we-are .intro-panel { background-image: url('../images/who-we-are-team.jpeg'); min-height: 988px; height: 988px; }
   #who-we-are .intro-panel::after {
     background:
       linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.90) 37.981%, rgba(255,255,255,0.35) 62.5%, rgba(255,255,255,0) 100%),
