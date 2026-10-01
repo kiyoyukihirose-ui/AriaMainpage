@@ -119,7 +119,7 @@
 
   /* per-section stock photos */
   #who-we-are .intro-panel {
-    background-image: url('../images/who-we-are-team-wide.jpeg');
+    background-image: url('../images/who-we-are-team-wide.webp');
     min-height: 988px;
     height: 988px;
   }
@@ -129,11 +129,11 @@
       linear-gradient(rgba(0,90,255,0.25), rgba(0,90,255,0.25));
   }
   #who-we-are h2::after { height: 4px; background: var(--royal-blue); }
-  #what-we-do .intro-panel { background-image: url('../images/business-panel.jpg'); }
+  #what-we-do .intro-panel { background-image: url('../images/business-panel.webp'); }
   #what-we-do .intro-panel::after { background: linear-gradient(180deg, rgba(28,58,99,0.55) 0%, rgba(28,58,99,0.55) 70%, rgba(255,255,255,0.86) 100%); }
-  #how-we-work .intro-panel { background-image: url('../images/how-we-work-collaboration-wide.jpeg'); }
-  #partnerships .intro-panel { background-image: url('../images/partnership.jpg'); }
-  #careers .intro-panel { background-image: url('../images/careers.jpg'); }
+  #how-we-work .intro-panel { background-image: url('../images/how-we-work-collaboration-wide.webp'); }
+  #partnerships .intro-panel { background-image: url('../images/partnerships.webp'); }
+  #careers .intro-panel { background-image: url('../images/careers.webp'); }
 
   .detail-wrap { padding-top: 64px; padding-bottom: 96px; }
   #how-we-work .detail-wrap { padding-top: 0; }
@@ -141,7 +141,7 @@
   .detail-wrap.wwd-diagram-panel {
     position: relative;
     padding-top: 32px;
-    background-image: url('../images/business-panel.jpg');
+    background-image: url('../images/business-panel.webp');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -153,7 +153,7 @@
   .hero-photo {
     min-height: 820px;
     position: relative;
-    background-image: url('../images/business-panel.jpg');
+    background-image: url('../images/business-panel.webp');
     background-attachment: fixed;
     background-size: cover;
   }
@@ -281,9 +281,9 @@
   }
   .mv-half::after { content: ""; position: absolute; inset: 0; }
   .mv-half > * { position: relative; z-index: 1; }
-  .mv-half.navy { background-image: url('../images/business-panel.jpg'); color: var(--white); }
+  .mv-half.navy { background-image: url('../images/business-panel.webp'); color: var(--white); }
   .mv-half.navy::after { background: rgba(28,58,99,0.86); }
-  .mv-half.cobalt { background-image: url('../images/business-panel.jpg'); color: var(--white); }
+  .mv-half.cobalt { background-image: url('../images/business-panel.webp'); color: var(--white); }
   .mv-half.cobalt::after { background: rgba(30,95,214,0.78); }
   .mv-half .eyebrow { font-family: var(--font-sans); font-size: 20px; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 16px; width: 100%; max-width: 300px; }
   .mv-half .eyebrow::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: 0.5; }
@@ -466,7 +466,7 @@
   .hero-photo {
     min-height: max(680px, calc(100svh - 73px));
     overflow: hidden;
-    background-image: url('../images/tokyo-skyline.png');
+    background-image: url('../images/tokyo-skyline.webp');
     background-attachment: fixed;
     background-size: 116.77% auto;
     background-position: 81.4% 55.6%;
@@ -547,7 +547,7 @@
     position: relative;
     min-height: 1719px;
     overflow: hidden;
-    background-image: url('../images/tokyo-skyline.png');
+    background-image: url('../images/tokyo-skyline.webp');
     background-attachment: fixed;
     background-size: 116.77% auto;
     background-position: 81.4% 55.6%;
@@ -756,7 +756,7 @@
     #mission-vision .mv-split {
       gap: 0;
       grid-auto-rows: 1fr;
-      background-image: url('../images/business-panel.jpg');
+      background-image: url('../images/business-panel.webp');
       background-position: center bottom;
       background-size: auto 160%;
       background-repeat: no-repeat;
@@ -772,7 +772,7 @@
       min-height: 933px;
       height: 933px;
       align-items: flex-start;
-      background-image: url('../images/how-we-work-collaboration-wide.jpeg');
+      background-image: url('../images/how-we-work-collaboration-wide.webp');
       background-size: cover;
       background-position: center;
     }
@@ -840,7 +840,7 @@
       min-height: 573px;
       height: 573px;
       align-items: flex-start;
-      background-image: url('../images/partnerships-figma.png');
+      background-image: url('../images/partnerships.webp');
       background-size: cover;
       background-position: center 42%;
     }
@@ -954,7 +954,7 @@
       min-height: 573px;
       height: 573px;
       align-items: flex-start;
-      background-image: url('../images/careers-figma.png');
+      background-image: url('../images/careers.webp');
       background-size: cover;
       background-position: center;
     }
@@ -1282,7 +1282,7 @@
 
     #partnerships .intro-panel {
       min-height: 600px;
-      background-image: url('../images/partnerships-figma.png');
+      background-image: url('../images/partnerships.webp');
       background-size: auto 124%;
       background-position: center 44%;
       background-repeat: no-repeat;
@@ -1443,4 +1443,17 @@
   .lang-en #careers .stack-item h3 { line-height: 1.45; }
   .lang-en #careers .stack-item p { line-height: 1.65; }
   .lang-en #contact .company-table th { width: 42%; }
+}
+
+/* Smaller raster sources for mobile viewports. */
+@media (max-width: 768px) {
+  .hero-photo,
+  #what-we-do { background-image: url('../images/tokyo-skyline-mobile.webp'); }
+  #who-we-are .intro-panel { background-image: url('../images/who-we-are-team-wide-mobile.webp'); }
+  #what-we-do .intro-panel,
+  #what-we-do .detail-wrap.wwd-diagram-panel,
+  #mission-vision .mv-split { background-image: url('../images/business-panel-mobile.webp'); }
+  #how-we-work .intro-panel { background-image: url('../images/how-we-work-collaboration-mobile.webp'); }
+  #partnerships .intro-panel { background-image: url('../images/partnerships-mobile.webp'); }
+  #careers .intro-panel { background-image: url('../images/careers-mobile.webp'); }
 }
