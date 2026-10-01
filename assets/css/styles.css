@@ -1402,7 +1402,7 @@
   .lang-en #partnerships { height: 1365px; }
   .lang-en #partnerships > .detail-wrap { height: 792px; }
   .lang-en #partnerships .e-wave { height: 330px; }
-  .lang-en #partnerships .e-wave h3 { font-size: 15px; line-height: 1.45; }
+  .lang-en #partnerships .e-wave h3 { min-height: 44px; font-size: 15px; line-height: 1.45; }
   .lang-en #partnerships .e-wave p { font-size: 12.5px; line-height: 1.65; }
   .lang-en #partnerships .closing-center { margin-top: 18px; }
   .lang-en #partnerships .closing-center .cta-call { font-size: 17px; line-height: 1.65; }
