@@ -1371,6 +1371,15 @@
 .lang-en #partnerships .e-wave h3,
 .lang-en #careers .stack-item h3 { font-family: var(--font-serif); }
 .lang-en #contact .company-table th { width: 240px; }
+.lang-en #how-we-work .hww-band .closing.statement-center {
+  max-width: 900px;
+  font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0.025em;
+  color: #f3f7ff;
+}
 
 @media (min-width: 769px) {
   .lang-en .hero-tagline { font-size: 24px; line-height: 1.55; padding-top: 24px; }
@@ -1398,6 +1407,12 @@
 }
 
 @media (max-width: 768px) {
+  .lang-en #how-we-work .hww-band .closing.statement-center {
+    max-width: 330px;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+  }
   .lang-en .hero-tagline { top: 158px; font-size: 18px; line-height: 1.5; }
   .lang-en .hero-links { top: 294px; }
   .lang-en #who-we-are .intro-panel { min-height: 560px; }
