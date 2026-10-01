@@ -337,8 +337,6 @@
   .e-wave .item:nth-child(2) .circle-num { margin-top: 64px; }
   .e-wave .item:nth-child(3) .circle-num { margin-top: 16px; }
   .e-wave .item:nth-child(4) .circle-num { margin-top: 76px; }
-  .e-wave-connector { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: visible; pointer-events: none; }
-  .e-wave-connector path { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 4 6; }
   .e-wave h3 { font-size: 16px; margin: 0 0 8px; color: var(--dark); }
   .e-wave p { margin: 0; font-family: var(--font-sans); color: var(--text-sub); font-size: 13px; }
 
@@ -395,7 +393,6 @@
   .stack-item { border-bottom-color: #eadfc4; }
   .grid2x2, .grid2x2 .item { border-color: var(--gold-line); }
   .radial::before { border-color: var(--gold-line); }
-  .e-wave-connector path { stroke: var(--gold-line); }
   .mv-half .eyebrow::after { background: var(--gold-light); opacity: 1; }
   .hww-band { border-top: 1px solid var(--gold-light); border-bottom: 1px solid var(--gold-light); }
   .biz-note { border-left-color: var(--gold); }
@@ -417,7 +414,6 @@
     .grid2x2 { border-left: none; }
     .grid2x2 .item { border-right: none; padding: 28px 0; }
     .e-wave .circle-num { margin-top: 0 !important; }
-    .e-wave-connector { display: none; }
     .mv-half { min-height: 0; padding: 48px 24px; }
     .h2-xl { font-size: 32px; }
     .radial { height: auto; max-width: none; }
@@ -526,21 +522,39 @@
     .hero-links a, .hero-links a::before, .hero-links a span { transition: none; }
   }
 
-  /* Text reveals through MISSION / VISION */
-  .js .scroll-reveal {
-    opacity: 0;
-    transform: translateX(-18px);
-    transition:
-      opacity 1.1s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay, 0s),
-      transform 1.1s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay, 0s);
-    will-change: opacity, transform;
+  /* Content reveals use CSS view timelines; unsupported browsers show static content. */
+  @keyframes content-reveal {
+    from { opacity: 0; transform: translateX(-18px); }
+    to { opacity: 1; transform: translateX(0); }
   }
-  .js .scroll-reveal.is-visible {
-    opacity: 1;
-    transform: translateX(0);
+  @supports (animation-timeline: view()) {
+    :where(
+      #who-we-are h2, #who-we-are .lead,
+      #what-we-do .intro-panel h2, #what-we-do .intro-panel .lead,
+      #what-we-do .radial .center,
+      #what-we-do .node h3, #what-we-do .node p, #what-we-do .biz-note,
+      #mission-vision .mv-half .eyebrow, #mission-vision .mv-half h3,
+      #how-we-work .intro-panel h2, #how-we-work .intro-panel .lead,
+      #how-we-work .grid3 .item, #how-we-work .hww-band .closing,
+      #where-were-going h2, #where-were-going .chapter-label,
+      #where-were-going .lead, #where-were-going .stack-item,
+      #partnerships .intro-panel h2, #partnerships .intro-panel .mag-body p,
+      #partnerships .detail-wrap > .section-label, #partnerships .e-wave .item,
+      #partnerships .closing-center .cta-call, #partnerships .closing-center .cta-btn,
+      #careers .intro-panel h2, #careers .intro-panel .lead,
+      #careers .careers-band > .wrap > .section-label, #careers .stack-item,
+      #careers .careers-photos, #careers .careers-apply,
+      #contact-band .contact-band-en, #contact-band .contact-band-lead,
+      #contact-band .contact-band-btn, #contact h2,
+      #contact .company-table, #contact .legal-links
+    ) {
+      animation: content-reveal 1s cubic-bezier(.22,1,.36,1) both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 100%;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
-    .js .scroll-reveal { opacity: 1; transform: none; transition: none; }
+    :where(main, #contact-band) * { animation-duration: 0.01ms !important; }
   }
 
   #what-we-do {
