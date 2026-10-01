@@ -122,9 +122,6 @@
     background-image: url('../images/who-we-are-team.jpeg');
     min-height: 988px;
     height: 988px;
-    background-size: auto 108%;
-    background-position: center top;
-    background-repeat: no-repeat;
   }
   #who-we-are .intro-panel::after {
     background:
