@@ -1387,6 +1387,11 @@
 
 @media (min-width: 769px) {
   .lang-en .hero-tagline { font-size: 24px; line-height: 1.55; padding-top: 24px; }
+  .lang-en #what-we-do .node.commerce .wwd-node-content,
+  .lang-en #what-we-do .node.legal .wwd-node-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .lang-en #what-we-do .wwd-stats-note { top: 134px; }
   .lang-en #mission-vision .mv-half h3 { width: calc(100% - 64px); font-size: 19px; line-height: 1.75; }
 
