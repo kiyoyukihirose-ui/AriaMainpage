@@ -17,7 +17,11 @@
   <section class="subpage-hero"><div class="wrap"><p class="kicker">CONTACT</p><h1>お問い合わせ</h1></div></section>
   <section class="subpage-content"><div class="wrap narrow">
     <div class="contact-intro"><p class="subpage-lead">事業提携、取材、その他のお問い合わせを受け付けています。必要事項をご入力のうえ、送信してください。</p><p class="small-note">各サービスに関するお問い合わせは、それぞれのサービス窓口をご利用ください。</p></div>
-    <form class="contact-form" novalidate>
+    <form class="contact-form" action="https://formsubmit.co/contact@ariaofficial.jp" method="POST" accept-charset="UTF-8" novalidate>
+      <input type="hidden" name="_subject" value="Aria公式サイトからのお問い合わせ">
+      <input type="hidden" name="_next" value="https://kiyoyukihirose-ui.github.io/AriaMainpage/thanks.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
       <div class="form-row"><div class="form-label">お問い合わせ種別<span class="required">必須</span></div><div class="radio-group">
         <label><input type="radio" name="inquiry_type" value="partnership" required> 事業提携</label><label><input type="radio" name="inquiry_type" value="media"> 取材・メディア</label><label><input type="radio" name="inquiry_type" value="other"> その他</label>
       </div></div>
@@ -33,5 +37,5 @@
   </div></section>
 </main>
 <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><div class="logo" style="color:var(--white);">Aria<small style="color:var(--sky-blue);">TOKYO / GLOBAL</small></div></div><div><h4>SECTIONS</h4><ul><li><a href="index.html#who-we-are">WHO WE ARE</a></li><li><a href="index.html#what-we-do">WHAT WE DO</a></li><li><a href="index.html#how-we-work">HOW WE WORK</a></li><li><a href="index.html#where-were-going">WHERE WE'RE GOING</a></li></ul></div><div><h4>CONNECT</h4><ul><li><a href="index.html#partnerships">PARTNERSHIPS</a></li><li><a href="careers.html">CAREERS</a></li><li><a href="index.html#contact">COMPANY</a></li><li><a href="contact.html">CONTACT</a></li></ul></div></div><div class="footer-bottom"><span>© Aria</span></div></div></footer>
-<script src="assets/js/main.js?v=20261001-reveal-fix"></script><script src="assets/js/subpages.js?v=20261001-aria-case"></script>
+<script src="assets/js/main.js?v=20261001-reveal-fix"></script><script src="assets/js/subpages.js?v=20261006-form-delivery"></script>
 </body></html>

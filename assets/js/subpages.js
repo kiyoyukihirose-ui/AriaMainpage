@@ -33,17 +33,20 @@
       radio.addEventListener('change', function () { setCompanyRequirement(radio.value); });
     });
     form.addEventListener('submit', function (event) {
-      event.preventDefault();
       var invalid = form.querySelector(':invalid');
       var error = form.querySelector('.form-error');
       if (invalid) {
+        event.preventDefault();
         invalid.setAttribute('aria-invalid', 'true');
         if (error) error.classList.add('is-visible');
         invalid.focus();
         return;
       }
-      var lang = document.documentElement.lang === 'en' ? '?lang=en' : '';
-      window.location.href = 'thanks.html' + lang;
+      var submit = form.querySelector('[type="submit"]');
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = document.documentElement.lang === 'en' ? 'Sending…' : '送信中…';
+      }
     });
     Array.prototype.forEach.call(form.querySelectorAll('input, textarea'), function (field) {
       field.addEventListener('input', function () { field.removeAttribute('aria-invalid'); });
