@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 const CONTACT_RECIPIENT = 'contact@ariaofficial.jp';
-const CONTACT_FROM = 'webform@aria-inc.co.jp';
+const CONTACT_FROM = 'contact@ariaofficial.jp';
 const MAX_MESSAGE_LENGTH = 5000;
 const SUBMIT_INTERVAL_SECONDS = 15;
 
