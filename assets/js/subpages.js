@@ -18,6 +18,24 @@
     if (!form) return;
     var params = new URLSearchParams(window.location.search);
     var preset = params.get('type');
+    var status = params.get('status');
+    var serverError = form.querySelector('[data-server-error]');
+    if (status && serverError) {
+      var english = document.documentElement.lang === 'en';
+      var messages = {
+        validation: english
+          ? 'Please review the form and try again.'
+          : '入力内容をご確認のうえ、もう一度送信してください。',
+        rate: english
+          ? 'Please wait a moment before submitting again.'
+          : '少し時間をおいてから、もう一度送信してください。',
+        send: english
+          ? 'Your message could not be sent. Please try again later or contact us by phone.'
+          : '送信できませんでした。時間をおいて再度お試しいただくか、お電話でお問い合わせください。'
+      };
+      serverError.textContent = messages[status] || messages.send;
+      serverError.classList.add('is-visible');
+    }
     if (preset) {
       Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (link) {
         var url = new URL(link.href, window.location.href);
@@ -34,7 +52,7 @@
     });
     form.addEventListener('submit', function (event) {
       var invalid = form.querySelector(':invalid');
-      var error = form.querySelector('.form-error');
+      var error = form.querySelector('[data-validation-error]');
       if (invalid) {
         event.preventDefault();
         invalid.setAttribute('aria-invalid', 'true');

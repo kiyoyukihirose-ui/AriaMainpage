@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Aria</title><meta name="description" content="Contact Aria about partnerships, media, or other inquiries.">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261001-reveal-fix"><link rel="stylesheet" href="assets/css/subpages.css?v=20261001-heading-line">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261001-reveal-fix"><link rel="stylesheet" href="assets/css/subpages.css?v=20261006-sendmail">
 </head>
 <body class="subpage lang-en">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -17,23 +17,22 @@
   <section class="subpage-hero"><div class="wrap"><p class="kicker">CONTACT</p><h1>Contact</h1></div></section>
   <section class="subpage-content"><div class="wrap narrow">
     <div class="contact-intro"><p class="subpage-lead">For business partnerships, media requests, or other general inquiries, please complete the form below.</p><p class="small-note">For inquiries about a specific service, please use that service’s dedicated contact channel.</p></div>
-    <form class="contact-form" action="https://formsubmit.co/contact@ariaofficial.jp" method="POST" accept-charset="UTF-8" novalidate>
-      <input type="hidden" name="_subject" value="New inquiry from the Aria website">
-      <input type="hidden" name="_next" value="https://www.aria-inc.co.jp/thanks.html?lang=en">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+    <form class="contact-form" id="contact-form" action="send-contact.php" method="POST" accept-charset="UTF-8" novalidate>
+      <input type="hidden" name="lang" value="en">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true">
+      <p class="form-error form-server-error" data-server-error role="alert"></p>
       <div class="form-row"><div class="form-label">Inquiry Type<span class="required">Required</span></div><div class="radio-group"><label><input type="radio" name="inquiry_type" value="partnership" required> Business Partnership</label><label><input type="radio" name="inquiry_type" value="media"> Media</label><label><input type="radio" name="inquiry_type" value="other"> Other</label></div></div>
-      <div class="form-row"><label class="form-label" for="company">Company / Organization<span class="optional" data-company-label>Optional</span></label><div><input class="form-control" id="company" name="company" autocomplete="organization"><p class="field-hint" data-company-hint hidden>Required for partnership and media inquiries.</p></div></div>
-      <div class="form-row"><label class="form-label" for="name">Name<span class="required">Required</span></label><div><input class="form-control" id="name" name="name" autocomplete="name" required></div></div>
-      <div class="form-row"><label class="form-label" for="email">Email Address<span class="required">Required</span></label><div><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div></div>
-      <div class="form-row"><label class="form-label" for="tel">Phone Number<span class="optional">Optional</span></label><div><input class="form-control" id="tel" name="tel" type="tel" autocomplete="tel"></div></div>
-      <div class="form-row"><label class="form-label" for="message">Message<span class="required">Required</span></label><div><textarea class="form-control" id="message" name="message" required></textarea></div></div>
-      <p class="form-error" role="alert">Please review the required fields and correct any errors.</p>
+      <div class="form-row"><label class="form-label" for="company">Company / Organization<span class="optional" data-company-label>Optional</span></label><div><input class="form-control" id="company" name="company" autocomplete="organization" maxlength="160"><p class="field-hint" data-company-hint hidden>Required for partnership and media inquiries.</p></div></div>
+      <div class="form-row"><label class="form-label" for="name">Name<span class="required">Required</span></label><div><input class="form-control" id="name" name="name" autocomplete="name" maxlength="100" required></div></div>
+      <div class="form-row"><label class="form-label" for="email">Email Address<span class="required">Required</span></label><div><input class="form-control" id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div></div>
+      <div class="form-row"><label class="form-label" for="tel">Phone Number<span class="optional">Optional</span></label><div><input class="form-control" id="tel" name="tel" type="tel" autocomplete="tel" maxlength="50"></div></div>
+      <div class="form-row"><label class="form-label" for="message">Message<span class="required">Required</span></label><div><textarea class="form-control" id="message" name="message" maxlength="5000" required></textarea></div></div>
+      <p class="form-error" data-validation-error role="alert">Please review the required fields and correct any errors.</p>
       <div class="form-actions"><button class="subpage-action" type="submit">Send Message →</button></div>
     </form>
     <div class="form-notice"><strong>Phone Inquiries</strong>03-6258-2610 (Weekdays 9:00 AM–7:00 PM JST)</div>
   </div></section>
 </main>
 <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><div class="logo" style="color:var(--white);">Aria<small style="color:var(--sky-blue);">TOKYO / GLOBAL</small></div></div><div><h4>SECTIONS</h4><ul><li><a href="en.html#who-we-are">WHO WE ARE</a></li><li><a href="en.html#what-we-do">WHAT WE DO</a></li><li><a href="en.html#how-we-work">HOW WE WORK</a></li><li><a href="en.html#where-were-going">LOOKING AHEAD</a></li></ul></div><div><h4>CONNECT</h4><ul><li><a href="en.html#partnerships">PARTNERSHIPS</a></li><li><a href="careers-en.html">CAREERS</a></li><li><a href="en.html#contact">COMPANY</a></li><li><a href="contact-en.html">CONTACT</a></li></ul></div></div><div class="footer-bottom"><span>© Aria</span></div></div></footer>
-<script src="assets/js/main.js?v=20261001-reveal-fix"></script><script src="assets/js/subpages.js?v=20261006-form-delivery"></script>
+<script src="assets/js/main.js?v=20261001-reveal-fix"></script><script src="assets/js/subpages.js?v=20261006-sendmail"></script>
 </body></html>
