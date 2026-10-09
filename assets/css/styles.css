@@ -446,14 +446,54 @@
     min-height: 72px;
     padding: 0;
   }
-  .site-header .logo {
+  .site-header .site-logo {
     position: absolute;
     left: 26px;
-    top: 6px;
-    line-height: 1.9;
-    font-weight: 600;
+    top: 9px;
+    width: 104.891px;
+    height: 58.891px;
+    font-size: 0;
+    line-height: normal;
+    letter-spacing: normal;
   }
-  .site-header .logo small { margin-top: -8px; }
+  .site-logo-variant { position: absolute; inset: 0; display: block; }
+  .site-logo-desktop-mark {
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    width: 92.2171px;
+    height: 30.8591px;
+    max-width: none;
+  }
+  .site-logo-tagline {
+    position: absolute;
+    left: 0;
+    color: #1e5fd6;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+  }
+  .site-logo-desktop .site-logo-tagline {
+    top: 35.445px;
+    font-family: "Zen Kaku Gothic New", var(--font-sans);
+  }
+  .site-logo-mobile { display: none; }
+  .site-logo-mobile-mark-blue,
+  .site-logo-mobile-mark-navy,
+  .site-logo-mobile-wordmark {
+    position: absolute;
+    max-width: none;
+  }
+  .site-logo-mobile-mark-blue { left: 7.55px; top: 3.055px; width: 26.8384px; height: 28.7481px; }
+  .site-logo-mobile-mark-navy { left: 1px; top: 3.055px; width: 23.484px; height: 28.7461px; }
+  .site-logo-mobile-wordmark { left: 42.032px; top: 14.577px; width: 44.9657px; height: 17.2275px; }
+  .site-logo-mobile .site-logo-tagline {
+    top: 29.891px;
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
   .site-header .lang-switch { position: absolute; left: 633px; top: 25px; }
   .site-header .main-nav { position: absolute; left: 724px; top: 21px; }
   .site-header .main-nav ul { flex-wrap: nowrap; gap: 24px; }
@@ -696,13 +736,15 @@
 
   @media (max-width: 1200px) {
     .site-header .wrap { width: calc(100% - 48px); }
-    .site-header .logo { left: 0; }
+    .site-header .site-logo { left: 0; }
     .site-header .lang-switch { left: auto; right: 430px; }
     .site-header .main-nav { left: auto; right: 0; }
   }
   @media (max-width: 768px) {
     .site-header .wrap { max-width: none; width: 100%; padding: 0 20px; }
-    .site-header .logo { left: 20px; }
+    .site-header .site-logo { left: 20px; top: 12px; width: 105px; height: 49px; }
+    .site-logo-desktop { display: none; }
+    .site-logo-mobile { display: block; }
     .site-header .lang-switch { left: auto; right: 20px; }
     .hero-photo { min-height: 620px; background-attachment: scroll; background-size: cover; background-position: center; }
     .hero-inner { min-height: 620px; justify-content: center; padding: 0 20px; }
