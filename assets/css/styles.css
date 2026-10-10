@@ -1490,7 +1490,7 @@
   #what-we-do { background-image: url('../images/tokyo-skyline-mobile.webp'); }
   #who-we-are .intro-panel { background-image: url('../images/who-we-are-team-wide-mobile.webp'); }
   #what-we-do .intro-panel,
-  #what-we-do .detail-wrap.wwd-diagram-panel,
+  #what-we-do .detail-wrap.wwd-diagram-panel { background-image: none; }
   #mission-vision .mv-split { background-image: url('../images/business-panel-mobile.webp'); }
   #how-we-work .intro-panel { background-image: url('../images/how-we-work-collaboration-mobile.webp'); }
   #partnerships .intro-panel { background-image: url('../images/partnerships-mobile.webp'); }
