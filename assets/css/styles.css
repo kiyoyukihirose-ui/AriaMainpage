@@ -1488,6 +1488,13 @@
 @media (max-width: 768px) {
   .hero-photo,
   #what-we-do { background-image: url('../images/tokyo-skyline-mobile.webp'); }
+  .hero-photo,
+  #who-we-are .intro-panel,
+  #how-we-work .intro-panel,
+  #careers .intro-panel { background-position-y: calc(50% + var(--mobile-bg-shift, 0px)); }
+  #what-we-do { background-position-y: calc(55.6% + var(--mobile-bg-shift, 0px)); }
+  #mission-vision .mv-split { background-position-y: calc(100% + var(--mobile-bg-shift, 0px)); }
+  #partnerships .intro-panel { background-position-y: calc(44% + var(--mobile-bg-shift, 0px)); }
   #who-we-are .intro-panel { background-image: url('../images/who-we-are-team-wide-mobile.webp'); }
   #what-we-do .intro-panel,
   #what-we-do .detail-wrap.wwd-diagram-panel { background-image: none; }

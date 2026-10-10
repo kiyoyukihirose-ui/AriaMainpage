@@ -110,6 +110,39 @@ document.documentElement.classList.add('js');
     if (section) observeOnce(section, () => section.classList.add('is-orbit-active'));
   };
 
+  const initMobileBackgroundMotion = () => {
+    if (reducedMotion) return;
+    const mobile = matchMedia('(max-width: 768px)');
+    const targets = [...document.querySelectorAll([
+      '.hero-photo', '#who-we-are .intro-panel', '#what-we-do',
+      '#mission-vision .mv-split', '#how-we-work .intro-panel',
+      '#partnerships .intro-panel', '#careers .intro-panel'
+    ].join(','))];
+    if (!targets.length) return;
+
+    let queued = false;
+    const render = () => {
+      queued = false;
+      if (!mobile.matches) return;
+      const viewportCenter = innerHeight / 2;
+      targets.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > innerHeight) return;
+        const distance = viewportCenter - (rect.top + rect.height / 2);
+        const shift = Math.max(-32, Math.min(32, distance * 0.08));
+        element.style.setProperty('--mobile-bg-shift', `${shift.toFixed(1)}px`);
+      });
+    };
+    const requestRender = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(render);
+    };
+    addEventListener('scroll', requestRender, { passive: true });
+    addEventListener('resize', requestRender, { passive: true });
+    render();
+  };
+
   const initLanguagePositionSwitch = () => {
     const storageKey = 'aria-language-position';
     const links = [...document.querySelectorAll('.lang-switch a:not([aria-current])')];
@@ -153,6 +186,7 @@ document.documentElement.classList.add('js');
     initScrollReveals();
     initMobileMenu();
     initOrbitMotion();
+    initMobileBackgroundMotion();
   };
 
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', init, { once: true });
