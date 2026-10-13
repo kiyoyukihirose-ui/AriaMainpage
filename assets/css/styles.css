@@ -1496,12 +1496,17 @@
   #mission-vision .mv-split { background-position-y: 100%; }
   #partnerships .intro-panel { background-position-y: 44%; }
   .hero-photo,
-  #who-we-are .intro-panel,
   #what-we-do,
   #mission-vision .mv-split,
-  #how-we-work .intro-panel,
   #partnerships .intro-panel,
   #careers .intro-panel { background-attachment: fixed; }
+  #who-we-are .intro-panel,
+  #how-we-work .intro-panel {
+    background-attachment: scroll;
+    background-size: auto calc(100% + 160px);
+  }
+  #who-we-are .intro-panel { background-position-y: calc(50% + var(--mobile-panel-shift, 0px)); }
+  #how-we-work .intro-panel { background-position-y: calc(50% + var(--mobile-panel-shift, 0px)); }
   #who-we-are .intro-panel { background-image: url('../images/who-we-are-team-wide-mobile.webp'); }
   #what-we-do .intro-panel,
   #what-we-do .detail-wrap.wwd-diagram-panel { background-image: none; }
