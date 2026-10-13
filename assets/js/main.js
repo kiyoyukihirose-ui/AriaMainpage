@@ -123,12 +123,10 @@ document.documentElement.classList.add('js');
     const render = () => {
       queued = false;
       if (!mobile.matches) return;
-      const viewportCenter = innerHeight / 2;
       panels.forEach(panel => {
         const rect = panel.getBoundingClientRect();
         if (rect.bottom < 0 || rect.top > innerHeight) return;
-        const distance = viewportCenter - (rect.top + rect.height / 2);
-        const shift = Math.max(-80, Math.min(80, distance));
+        const shift = Math.max(-80, Math.min(80, 72 - rect.top));
         panel.style.setProperty('--mobile-panel-shift', `${shift.toFixed(1)}px`);
       });
     };
