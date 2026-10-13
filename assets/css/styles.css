@@ -1511,3 +1511,19 @@
   #partnerships .intro-panel { background-image: url('../images/partnerships-mobile.webp'); }
   #careers .intro-panel { background-image: url('../images/careers-mobile.webp'); }
 }
+
+/* iOS WebKit can drop fixed CSS backgrounds entirely. Keep the mobile
+   imagery visible there; other browsers retain the fixed treatment above. */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .hero-photo,
+    #who-we-are .intro-panel,
+    #what-we-do,
+    #mission-vision .mv-split,
+    #how-we-work .intro-panel,
+    #partnerships .intro-panel,
+    #careers .intro-panel {
+      background-attachment: scroll;
+    }
+  }
+}
