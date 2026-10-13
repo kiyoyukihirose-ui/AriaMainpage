@@ -1524,9 +1524,28 @@
     #partnerships .intro-panel,
     #careers .intro-panel {
       background-attachment: scroll;
-      background-size: auto var(--ios-bg-height, 100svh);
-      background-position-y: var(--ios-bg-top, 0px);
       background-repeat: no-repeat;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .ios-parallax-host {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-image: none !important;
+  }
+  .ios-parallax-layer {
+    position: absolute;
+    inset: -48px 0;
+    z-index: -1;
+    display: block;
+    pointer-events: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
   }
 }

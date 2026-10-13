@@ -113,7 +113,9 @@ document.documentElement.classList.add('js');
   const initIOSBackgroundMotion = () => {
     const isIOSWebKit = CSS.supports?.('-webkit-touch-callout', 'none')
       && matchMedia('(max-width: 768px)').matches;
-    if (!isIOSWebKit || reducedMotion) return;
+    const preview = new URLSearchParams(location.search).has('ios-preview')
+      && matchMedia('(max-width: 768px)').matches;
+    if ((!isIOSWebKit && !preview) || reducedMotion) return;
 
     const targets = [...document.querySelectorAll([
       '.hero-photo', '#who-we-are .intro-panel', '#what-we-do',
@@ -121,15 +123,32 @@ document.documentElement.classList.add('js');
       '#partnerships .intro-panel', '#careers .intro-panel'
     ].join(','))];
     if (!targets.length) return;
+    const overscan = 48;
+    const maxShift = 40;
+
+    const layers = targets.map(element => {
+      const style = getComputedStyle(element);
+      if (style.backgroundImage === 'none') return null;
+      const layer = document.createElement('span');
+      layer.className = 'ios-parallax-layer';
+      layer.setAttribute('aria-hidden', 'true');
+      layer.style.backgroundImage = style.backgroundImage;
+      layer.style.backgroundPosition = style.backgroundPosition;
+      element.classList.add('ios-parallax-host');
+      element.prepend(layer);
+      return { element, layer };
+    }).filter(Boolean);
+    if (!layers.length) return;
 
     let queued = false;
     const render = () => {
       queued = false;
-      document.documentElement.style.setProperty('--ios-bg-height', `${innerHeight}px`);
-      targets.forEach(element => {
+      layers.forEach(({ element, layer }) => {
         const rect = element.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > innerHeight) return;
-        element.style.setProperty('--ios-bg-top', `${-rect.top.toFixed(1)}px`);
+        if (rect.bottom < -overscan || rect.top > innerHeight + overscan) return;
+        const distance = innerHeight / 2 - (rect.top + rect.height / 2);
+        const shift = Math.max(-maxShift, Math.min(maxShift, distance * 0.14));
+        layer.style.transform = `translate3d(0, ${shift.toFixed(1)}px, 0)`;
       });
     };
     const requestRender = () => {
