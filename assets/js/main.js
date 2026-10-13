@@ -110,36 +110,6 @@ document.documentElement.classList.add('js');
     if (section) observeOnce(section, () => section.classList.add('is-orbit-active'));
   };
 
-  const initMobilePanelParallax = () => {
-    if (reducedMotion) return;
-    const mobile = matchMedia('(max-width: 768px)');
-    const panels = [...document.querySelectorAll([
-      '#who-we-are .intro-panel',
-      '#how-we-work .intro-panel'
-    ].join(','))];
-    if (!panels.length) return;
-
-    let queued = false;
-    const render = () => {
-      queued = false;
-      if (!mobile.matches) return;
-      panels.forEach(panel => {
-        const rect = panel.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > innerHeight) return;
-        const shift = Math.max(-80, Math.min(80, 72 - rect.top));
-        panel.style.setProperty('--mobile-panel-shift', `${shift.toFixed(1)}px`);
-      });
-    };
-    const requestRender = () => {
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(render);
-    };
-    addEventListener('scroll', requestRender, { passive: true });
-    addEventListener('resize', requestRender, { passive: true });
-    render();
-  };
-
   const initLanguagePositionSwitch = () => {
     const storageKey = 'aria-language-position';
     const links = [...document.querySelectorAll('.lang-switch a:not([aria-current])')];
@@ -183,7 +153,6 @@ document.documentElement.classList.add('js');
     initScrollReveals();
     initMobileMenu();
     initOrbitMotion();
-    initMobilePanelParallax();
   };
 
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', init, { once: true });
