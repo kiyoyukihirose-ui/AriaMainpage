@@ -1524,6 +1524,9 @@
     #partnerships .intro-panel,
     #careers .intro-panel {
       background-attachment: scroll;
+      background-size: auto var(--ios-bg-height, 100svh);
+      background-position-y: var(--ios-bg-top, 0px);
+      background-repeat: no-repeat;
     }
   }
 }
